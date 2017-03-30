@@ -10,6 +10,10 @@ DARK_ASSETS_DIR="assets-dark"
 
 INDEX="assets.txt"
 
+if [ ! -d $DARK_ASSETS_DIR ]; then
+    mkdir $DARK_ASSETS_DIR;
+fi
+
 for i in `cat $INDEX`
 do 
 if [ -f $DARK_ASSETS_DIR/$i.png ]; then
@@ -26,6 +30,6 @@ $INKSCAPE --export-id=$i \
 done
 
 
-cp $DARK_ASSETS_DIR/* ../xfwm4/.;
+# cp $DARK_ASSETS_DIR/* ../xfwm4/.;
 
 exit 0
